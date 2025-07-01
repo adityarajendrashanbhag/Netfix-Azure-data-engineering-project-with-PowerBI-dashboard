@@ -1,0 +1,6 @@
+selected resource name:		netflix_github_dataset_sink
+selected resource type:		dataset
+factory name:			adf-netflix-dataeng-ars
+factory location:		eastus
+subscription id:		cf65e589-377b-4a6f-85fd-bdcbd010e155
+time of download (UTC):		Tue, 01 Jul 2025 22:48:27 GMT

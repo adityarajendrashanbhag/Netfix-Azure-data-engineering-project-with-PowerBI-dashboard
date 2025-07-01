@@ -1,0 +1,31 @@
+{
+    "name": "netflix_github_dataset",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "github_connection",
+            "type": "LinkedServiceReference"
+        },
+        "parameters": {
+            "file_name": {
+                "type": "string"
+            }
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "HttpServerLocation",
+                "relativeUrl": {
+                    "value": "adityarajendrashanbhag/Netfix-azure-data-engineering-project/refs/heads/main/netflix-dataset/@{dataset().file_name}",
+                    "type": "Expression"
+                }
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": []
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

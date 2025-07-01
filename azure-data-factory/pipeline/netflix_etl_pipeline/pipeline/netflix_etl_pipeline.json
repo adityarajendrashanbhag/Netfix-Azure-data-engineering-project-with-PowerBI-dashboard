@@ -1,0 +1,194 @@
+{
+    "name": "netflix_etl_pipeline",
+    "properties": {
+        "activities": [
+            {
+                "name": "ForAllTheFiles",
+                "type": "ForEach",
+                "dependsOn": [
+                    {
+                        "activity": "validation_github",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "items": {
+                        "value": "@pipeline().parameters.param_array",
+                        "type": "Expression"
+                    },
+                    "activities": [
+                        {
+                            "name": "netflix-rawdata-github",
+                            "type": "Copy",
+                            "dependsOn": [],
+                            "policy": {
+                                "timeout": "0.12:00:00",
+                                "retry": 2,
+                                "retryIntervalInSeconds": 30,
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "userProperties": [],
+                            "typeProperties": {
+                                "source": {
+                                    "type": "DelimitedTextSource",
+                                    "storeSettings": {
+                                        "type": "HttpReadSettings",
+                                        "requestMethod": "GET"
+                                    },
+                                    "formatSettings": {
+                                        "type": "DelimitedTextReadSettings"
+                                    }
+                                },
+                                "sink": {
+                                    "type": "DelimitedTextSink",
+                                    "storeSettings": {
+                                        "type": "AzureBlobFSWriteSettings"
+                                    },
+                                    "formatSettings": {
+                                        "type": "DelimitedTextWriteSettings",
+                                        "quoteAllText": true,
+                                        "fileExtension": ".txt"
+                                    }
+                                },
+                                "enableStaging": false,
+                                "translator": {
+                                    "type": "TabularTranslator",
+                                    "typeConversion": true,
+                                    "typeConversionSettings": {
+                                        "allowDataTruncation": true,
+                                        "treatBooleanAsNumber": false
+                                    }
+                                }
+                            },
+                            "inputs": [
+                                {
+                                    "referenceName": "netflix_github_dataset",
+                                    "type": "DatasetReference",
+                                    "parameters": {
+                                        "file_name": {
+                                            "value": "@item().file_name",
+                                            "type": "Expression"
+                                        }
+                                    }
+                                }
+                            ],
+                            "outputs": [
+                                {
+                                    "referenceName": "netflix_github_dataset_sink",
+                                    "type": "DatasetReference",
+                                    "parameters": {
+                                        "folder_name": {
+                                            "value": "@item().folder_name",
+                                            "type": "Expression"
+                                        },
+                                        "file_name": {
+                                            "value": "@item().file_name",
+                                            "type": "Expression"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "validation_github",
+                "type": "Validation",
+                "dependsOn": [
+                    {
+                        "activity": "github_response",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "dataset": {
+                        "referenceName": "ng_dataset_validation",
+                        "type": "DatasetReference"
+                    },
+                    "timeout": "0.12:00:00",
+                    "sleep": 10
+                }
+            },
+            {
+                "name": "github_metadata_activity",
+                "type": "WebActivity",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "method": "GET",
+                    "url": "https://github.com/adityarajendrashanbhag/Netfix-azure-data-engineering-project/tree/main/netflix-dataset"
+                }
+            },
+            {
+                "name": "github_response",
+                "type": "SetVariable",
+                "dependsOn": [
+                    {
+                        "activity": "github_metadata_activity",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "variableName": "github_metadata",
+                    "value": {
+                        "value": "@activity('github_metadata_activity').output.Response",
+                        "type": "Expression"
+                    }
+                }
+            }
+        ],
+        "parameters": {
+            "param_array": {
+                "type": "array",
+                "defaultValue": [
+                    {
+                        "folder_name": "netflix_cast",
+                        "file_name": "netflix_cast.csv"
+                    },
+                    {
+                        "folder_name": "netflix_category",
+                        "file_name": "netflix_category.csv"
+                    },
+                    {
+                        "folder_name": "netflix_countries",
+                        "file_name": "netflix_countries.csv"
+                    },
+                    {
+                        "folder_name": "netflix_directors",
+                        "file_name": "netflix_directors.csv"
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "github_metadata": {
+                "type": "String"
+            }
+        },
+        "annotations": [],
+        "lastPublishTime": "2025-06-25T05:13:30Z"
+    },
+    "type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,24 @@
+{
+    "name": "ng_dataset_validation",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "azure_datalake_connection",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobFSLocation",
+                "fileName": "netflix_titles.csv",
+                "fileSystem": "raw-data"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": []
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

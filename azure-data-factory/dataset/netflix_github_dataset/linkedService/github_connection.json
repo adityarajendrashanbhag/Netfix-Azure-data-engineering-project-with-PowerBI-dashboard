@@ -1,0 +1,14 @@
+{
+    "name": "github_connection",
+    "type": "Microsoft.DataFactory/factories/linkedservices",
+    "properties": {
+        "description": "To get raw data from github repository",
+        "annotations": [],
+        "type": "HttpServer",
+        "typeProperties": {
+            "url": "https://raw.githubusercontent.com/",
+            "enableServerCertificateValidation": true,
+            "authenticationType": "Anonymous"
+        }
+    }
+}
