@@ -100,25 +100,24 @@ GitHub API → Bronze (ADLS Gen2) → Silver (Databricks) → Gold (Delta Tables
 ## Project Structure
 ```
 netflix-data-engineering/
-├── notebooks/        # ETL workflows
+├── notebooks/        
 │   ├ 01_bronze.ipynb
 │   ├ 02_silver.ipynb
 │   └ 03_gold.ipynb
-├── reports/          # Power BI files
-│   └ Netflix_Analytics.pbix
-├── src/              # helper modules
-│   └ netflix_api.py
-├── requirements.txt  # Python dependencies
-└── README.md         # this document
+├── analytics-dashboard/          
+│   └ netflix-analytics-dashboard-power-bi.pbix
+|   └ netflix-analytics-dashboard-power-bi.pdf
+├── dataset/             
+│   └ dimension_table
+│               └ netflix_cast.csv
+│               └ netflix_category.csv
+│               └ netflix_countries.csv
+│               └ netflix_directors.csv
+│   └ fact_table
+│               └ netflix_titles.csv
+├── README.md
+└── LICENSE
 ```
-
----
-
-## Future Enhancements
-- Schedule pipelines using Databricks Jobs.  
-- Add CI/CD for automated deployments.  
-- Explore event-driven ingestion (Event Hub).  
-- Integrate forecasting visuals in Power BI.
 
 ---
 
