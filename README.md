@@ -29,7 +29,8 @@ Key outcomes include:
 
 ## Architecture Diagram
 ```
-GitHub API → Bronze (ADLS Gen2) → Silver (Databricks) → Gold (Delta Tables) → Power BI
+![Netflix-DE-Architecture](https://raw.githubusercontent.com/adityarajendrashanbhag/repo/main/images/netflix-data-engineering-architecture.jpg)
+
 ```
 <!-- Consider replacing this ASCII art with an actual diagram image. -->
 
