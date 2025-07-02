@@ -10,9 +10,6 @@
   - [Silver: Data Cleansing & Transformation](#silver-data-cleansing--transformation)
   - [Gold: Aggregation & Denormalization](#gold-aggregation--denormalization)
 - [Power BI Dashboard Highlights](#power-bi-dashboard-highlights)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Future Enhancements](#future-enhancements)
 - [License](#license)
 
 ---
