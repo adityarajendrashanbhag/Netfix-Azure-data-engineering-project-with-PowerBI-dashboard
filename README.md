@@ -18,12 +18,12 @@
 ---
 
 ## Project Overview
-This repository demonstrates an end-to-end data engineering solution on Azure, transforming raw Netflix streaming metadata into actionable insights via a Power BI dashboard.
+This repository demonstrates an end-to-end data engineering solution on Azure, where we build ETL pipelines using the Medallion Architecture to process raw Netflix catalog data and transform it into actionable insights delivered through a Power BI dashboard.
 
 Key outcomes include:
-- Automated ingestion of GitHub-hosted JSON data into Azure Data Lake Gen2.  
-- Structured ETL pipelines using Azure Databricks and Delta Lake for reliability.  
-- Rich analytics in Power BI, featuring runtime averages, genre distributions, and geographic insights.
+- Automated ingestion of Netflix data (hosted on GitHub, sourced from Kaggle) into Azure Data Lake Gen2.
+- Structured ETL pipelines using Azure Databricks and Delta Lake to ensure data reliability and scalability.
+- An interactive Power BI dashboard of the Netflix content catalog, featuring genre distributions, audience rating breakdowns, time-based content trends, and geographic spread across top countries.
 
 ---
 
