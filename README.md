@@ -75,6 +75,8 @@ Key outcomes include:
 
 *Dashboard file: `Netflix_Analytics.pbix`*
 
+![Netflix Analytics Dashboard](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/analytics-dashboard/netflix-analytics-dashboard-power-bi.jpg)
+
 
 ---
 
