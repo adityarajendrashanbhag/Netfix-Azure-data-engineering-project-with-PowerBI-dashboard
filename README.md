@@ -29,7 +29,7 @@ Key outcomes include:
 
 ## Architecture Diagram
 
-![Netflix-DE-Architecture](https://raw.githubusercontent.com/adityarajendrashanbhag/repo/main/images/netflix-data-engineering-architecture.jpg)
+![Netflix Data Engineering Architecture](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/netflix-data-engineering-architecture.jpg)
 
 
 ---
