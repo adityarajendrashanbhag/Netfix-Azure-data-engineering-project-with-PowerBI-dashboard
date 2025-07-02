@@ -36,19 +36,20 @@ Key outcomes include:
 ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-data-factory/ADF_pipeline.jpg) 
 
 ### Silver: Data Cleansing & Transformation  
-- **Input**: Bronze
+- **Input**: `bronze-ma/netflix-{file_name}`
 - **Tech**: PySpark in Databricks  
 - **Steps**:
-  1. Infer and apply schema.  
-  2. Cleanse null or malformed records.  
-  3. Standardize types and formats.  
-  4. Persist as Delta tables in `silver/netflix/`.
+  1. Infer and apply schema  .
+  2. Cleanse data by converting nulls: set duration_minutes nulls to 0 and duration_seasons nulls to 1.
+  3. Convert duration_minutes and duration_seasons columns to Integer type.
+  4. Split titles, create type_flag columns and rank entries based on duration_minutes.
+  5. Persist results as Delta tables in silver-ma/netflix-{file_name}.
 
 - **Job** 
-- **1.**
+  **1.**
   ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-databricks/jobs1.jpg)
 
-- **2.**
+ **2.**
   ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-databricks/jobs2.jpg)
 
 
