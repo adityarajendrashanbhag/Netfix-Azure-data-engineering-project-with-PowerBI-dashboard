@@ -71,7 +71,9 @@ Diving deeper into genres, documentaries top the list, followed by stand-up come
 Interestingly, the catalog is tailored toward mature viewers, with TV-MA and TV-14 ratings leading by a large margin, shaping the platform as a destination for adult audiences. Meanwhile, the average movie runs 99 minutes, and TV shows typically hover around 2 seasons, suggesting a rich mix of quick-hit movies and binge-ready series.
 This dashboard captures a clear picture of how Netflix’s content strategy balances volume, variety, and audience focus across different genres and geographies. 
 
+
 *Dashboard file: `netflix-analytics-dashboard-power-bi.pbix`*
+
 
 ![Netflix Analytics Dashboard](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/analytics-dashboard/netflix-analytics-dashboard-power-bi.jpg)
 
