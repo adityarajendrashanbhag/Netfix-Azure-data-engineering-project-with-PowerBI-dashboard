@@ -43,7 +43,7 @@ Key outcomes include:
   2. Cleanse data by converting nulls: set duration_minutes nulls to 0 and duration_seasons nulls to 1.
   3. Convert duration_minutes and duration_seasons columns to Integer type.
   4. Split titles, create type_flag columns and rank entries based on duration_minutes.
-  5. Persist results as Delta tables in silver-ma/netflix-{file_name}.
+  5. Persist results as Delta tables in `silver-ma/netflix-{file_name}`.
 
 - **Job** 
   **1.**
@@ -56,9 +56,9 @@ Key outcomes include:
 ### Gold: Aggregation & Denormalization  
 - **Input**: Silver Delta tables (titles, directors, cast, countries, categories)  
 - **Process**:
-  1. Join dimension tables into a fact table.  
-  2. Calculate business metrics (e.g., average runtime, season counts).  
-  3. Save final Delta table at `gold/netflix_analytics/`.
+  1. Join dimension tables with the fact table to create a consolidated OLAP dataset.
+  2. Reduce columns by structuring related fields into ARRAY.
+  3. Save the final Delta table at `gold-ma/netflix_analytics-prod`.
 
 - **Delta tables** 
   ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-databricks/pipelines1.jpg)
