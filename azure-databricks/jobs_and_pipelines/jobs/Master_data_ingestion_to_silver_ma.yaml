@@ -1,0 +1,35 @@
+resources:
+  jobs:
+    Master_data_ingestion_to_silver_ma:
+      name: Master_data_ingestion_to_silver_ma
+      tasks:
+        - task_key: Weekday_lookup
+          notebook_task:
+            notebook_path: /Workspace/Netflix-de-project/5_lookup_notebook
+            base_parameters:
+              weekday: "{{job.start_time.iso_weekday}}"
+            source: WORKSPACE
+        - task_key: IfWeekDay
+          depends_on:
+            - task_key: Weekday_lookup
+          condition_task:
+            op: EQUAL_TO
+            left: "{{tasks.Weekday_lookup.values.weekoutput}}"
+            right: "7"
+        - task_key: SilverMasterData
+          depends_on:
+            - task_key: IfWeekDay
+              outcome: "true"
+          notebook_task:
+            notebook_path: /Workspace/Netflix-de-project/4_Silver_data_transformation
+            source: WORKSPACE
+        - task_key: If_false_notebook
+          depends_on:
+            - task_key: IfWeekDay
+              outcome: "false"
+          notebook_task:
+            notebook_path: /Workspace/Netflix-de-project/6_Lookup_days_count
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: STANDARD

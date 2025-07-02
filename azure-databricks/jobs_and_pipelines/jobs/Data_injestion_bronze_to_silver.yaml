@@ -1,0 +1,25 @@
+resources:
+  jobs:
+    Data_injestion_bronze_to_silver:
+      name: Data_injestion_bronze_to_silver
+      tasks:
+        - task_key: lookup_notebook_locations
+          notebook_task:
+            notebook_path: /Workspace/Netflix-de-project/3_Lookup_notebook_parametrized
+            source: WORKSPACE
+        - task_key: Silver_notebook
+          depends_on:
+            - task_key: lookup_notebook_locations
+          for_each_task:
+            inputs: "{{tasks.lookup_notebook_locations.values.net_files_array}}"
+            task:
+              task_key: Silver_notebook_iteration
+              notebook_task:
+                notebook_path: /Workspace/Netflix-de-project/2_silver-ma_transformation
+                base_parameters:
+                  sourcefolder: "{{input.sourcefolder}}"
+                  targetfolder: "{{input.targetfolder}}"
+                source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: STANDARD
