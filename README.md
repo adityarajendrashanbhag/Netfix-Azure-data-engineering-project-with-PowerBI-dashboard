@@ -44,11 +44,11 @@ Key outcomes include:
   3. Standardize types and formats.  
   4. Persist as Delta tables in `silver/netflix/`.
 
-  Job
-  1.
+- **Job** 
+- **1.**
   ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-databricks/jobs1.jpg)
 
-  2. 
+- **2.**
   ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-databricks/jobs2.jpg)
 
 
@@ -59,7 +59,7 @@ Key outcomes include:
   2. Calculate business metrics (e.g., average runtime, season counts).  
   3. Save final Delta table at `gold/netflix_analytics/`.
 
-  Delta tables
+- **Delta tables** 
   ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-databricks/pipelines1.jpg)
 
 ---
