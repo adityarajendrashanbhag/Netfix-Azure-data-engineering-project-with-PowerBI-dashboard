@@ -49,7 +49,7 @@ Key outcomes include:
   **1.**
   ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-databricks/jobs1.jpg)
 
- **2.**
+  **2.**
   ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-databricks/jobs2.jpg)
 
 
