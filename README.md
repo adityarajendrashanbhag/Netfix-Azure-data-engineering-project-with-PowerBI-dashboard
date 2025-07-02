@@ -28,11 +28,9 @@ Key outcomes include:
 ---
 
 ## Architecture Diagram
-```
+
 ![Netflix-DE-Architecture](https://raw.githubusercontent.com/adityarajendrashanbhag/repo/main/images/netflix-data-engineering-architecture.jpg)
 
-```
-<!-- Consider replacing this ASCII art with an actual diagram image. -->
 
 ---
 
