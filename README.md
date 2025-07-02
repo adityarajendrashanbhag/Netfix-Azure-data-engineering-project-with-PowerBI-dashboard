@@ -10,9 +10,6 @@
   - [Silver: Data Cleansing & Transformation](#silver-data-cleansing--transformation)
   - [Gold: Aggregation & Denormalization](#gold-aggregation--denormalization)
 - [Power BI Dashboard Highlights](#power-bi-dashboard-highlights)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Future Enhancements](#future-enhancements)
 - [License](#license)
 
 ---
@@ -69,11 +66,14 @@ Key outcomes include:
 ---
 
 ## Power BI Dashboard Highlights
-- **Library Pulse**: overall content count and recent additions.  
-- **Composition & Reach**: genre breakdowns and top country map.  
-- **Performance Spotlight**: runtime averages and season distributions.  
+With 6,234 titles, movies make up nearly 68% of the catalog, while TV shows account for the remaining 32%. Over the past two decades, the content library has grown steadily, revealing Netflix’s relentless push to expand its offerings year over year.
+Diving deeper into genres, documentaries top the list, followed by stand-up comedy, kids’ TV, and international dramas. On the map, the United States dominates the content count (over 31%), trailed by India, the UK, Japan, Canada, and Mexico—highlighting Netflix’s global reach and strategic market focus.
+Interestingly, the catalog is tailored toward mature viewers, with TV-MA and TV-14 ratings leading by a large margin, shaping the platform as a destination for adult audiences. Meanwhile, the average movie runs 99 minutes, and TV shows typically hover around 2 seasons, suggesting a rich mix of quick-hit movies and binge-ready series.
+This dashboard captures a clear picture of how Netflix’s content strategy balances volume, variety, and audience focus across different genres and geographies. 
 
-*Dashboard file: `Netflix_Analytics.pbix`*
+
+*Dashboard file: `netflix-analytics-dashboard-power-bi.pbix`*
+
 
 ![Netflix Analytics Dashboard](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/analytics-dashboard/netflix-analytics-dashboard-power-bi.jpg)
 
