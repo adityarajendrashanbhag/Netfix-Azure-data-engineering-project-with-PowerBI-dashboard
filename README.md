@@ -42,10 +42,11 @@ Key outcomes include:
 
 ## Pipeline Stages
 
-### Bronze: Data Ingestion  
+### Bronze: Data Ingestion from Github API to ADLS Gen2
 - **Source**: GitHub Netflix Titles Dataset API  
-- **Destination**: `bronze/netflix/` on ADLS Gen2  
-- **Process**: Databricks notebook calls the API and stores raw JSON.  
+- **Destination**: `bronze-ma/netflix-{file_name}` on ADLS Gen2 using parametrized   
+- **Process**: We use ADF to call the Github API and once the request passes and it is true, we extract the data into bronze-ma folder
+![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-data-factory/ADF_pipeline.jpg) 
 
 ### Silver: Data Cleansing & Transformation  
 - **Input**: Bronze JSON  
