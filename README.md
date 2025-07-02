@@ -1,19 +1,6 @@
 
 # Netflix Data Engineering: End-to-End Pipeline & Power BI Dashboard
 
-## Table of Contents
-- [Project Overview](#project-overview)
-- [Architecture Diagram](#architecture-diagram)
-- [Technology Stack](#technology-stack)
-- [Pipeline Stages](#pipeline-stages)
-  - [Bronze: Data Ingestion](#bronze-data-ingestion)
-  - [Silver: Data Cleansing & Transformation](#silver-data-cleansing--transformation)
-  - [Gold: Aggregation & Denormalization](#gold-aggregation--denormalization)
-- [Power BI Dashboard Highlights](#power-bi-dashboard-highlights)
-- [License](#license)
-
----
-
 ## Project Overview
 This repository demonstrates an end-to-end data engineering solution on Azure, where we build ETL pipelines using the Medallion Architecture to process raw Netflix catalog data and transform it into actionable insights delivered through a Power BI dashboard.
 
@@ -49,20 +36,31 @@ Key outcomes include:
 ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-data-factory/ADF_pipeline.jpg) 
 
 ### Silver: Data Cleansing & Transformation  
-- **Input**: Bronze JSON  
+- **Input**: Bronze
 - **Tech**: PySpark in Databricks  
 - **Steps**:
   1. Infer and apply schema.  
   2. Cleanse null or malformed records.  
   3. Standardize types and formats.  
-  4. Persist as Delta tables in `silver/netflix/`.  
+  4. Persist as Delta tables in `silver/netflix/`.
+
+  Job
+  1.
+  ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-databricks/jobs1.jpg)
+
+  2. 
+  ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-databricks/jobs2.jpg)
+
 
 ### Gold: Aggregation & Denormalization  
 - **Input**: Silver Delta tables (titles, directors, cast, countries, categories)  
 - **Process**:
   1. Join dimension tables into a fact table.  
   2. Calculate business metrics (e.g., average runtime, season counts).  
-  3. Save final Delta table at `gold/netflix_analytics/`.  
+  3. Save final Delta table at `gold/netflix_analytics/`.
+
+  Delta tables
+  ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-databricks/pipelines1.jpg)
 
 ---
 
