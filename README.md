@@ -34,12 +34,12 @@ Key outcomes include:
 
 ---
 
-## Technology Stack
-- **Azure Data Lake Gen2**: scalable storage for each medallion layer.
-- **Azure Databricks & Delta Lake**: Spark-based ETL, ACID transactions.
-- **Unity Catalog**: Delta table governance and security.
-- **Power BI**: interactive reporting and visualization.
-- **Python & PySpark**: notebook-driven data processing.
+## Technical stack
+- **Azure Data Lake Gen2**: storage for each Medallion layer.
+- **Azure Databricks & Delta Lake**: Spark-based ETL data processing.
+- **Unity Catalog**: for managing Delta table governance and security.
+- **Power BI**: interactive reporting and visualization of Netflix data.
+- **Python & PySpark**: notebook-driven data processing for transformation of raw data.
 
 ---
 
