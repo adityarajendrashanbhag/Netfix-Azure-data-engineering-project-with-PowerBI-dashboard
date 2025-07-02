@@ -31,8 +31,8 @@ Key outcomes include:
 
 ### Bronze: Data Ingestion from Github API to ADLS Gen2
 - **Source**: GitHub Netflix Titles Dataset API  
-- **Destination**: `bronze-ma/netflix-{file_name}` on ADLS Gen2 using parametrized   
-- **Process**: We use ADF to call the Github API and once the request passes and it is true, we extract the data into bronze-ma folder
+- **Destination**: `bronze-ma/netflix-{file_name}` on ADLS Gen2 (using parametrized paths)   
+- **Process**: We use Azure Data Factory (ADF) to call the GitHub API. Once the request passes and the response is validated, we extract the data into the bronze-ma folder in ADLS Gen2.
 ![ADF](https://raw.githubusercontent.com/adityarajendrashanbhag/Netfix-Azure-data-engineering-project-with-PowerBI-dashboard/main/azure-data-factory/ADF_pipeline.jpg) 
 
 ### Silver: Data Cleansing & Transformation  
