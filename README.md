@@ -75,48 +75,6 @@ Key outcomes include:
 
 *Dashboard file: `Netflix_Analytics.pbix`*
 
----
-
-## Getting Started
-
-1. **Clone repository**:
-   ```bash
-   git clone https://github.com/your-org/netflix-data-engineering.git
-   cd netflix-data-engineering
-   ```
-2. **Configure Azure credentials**:
-   ```bash
-   export AZURE_STORAGE_ACCOUNT=<your-account>
-   export AZURE_CLIENT_ID=<your-client-id>
-   export AZURE_CLIENT_SECRET=<your-secret>
-   export AZURE_TENANT_ID=<your-tenant-id>
-   ```
-3. **Import Databricks notebooks** from `notebooks/` and attach to a cluster.
-4. **Open Power BI**: load `reports/Netflix_Analytics.pbix` and connect to your Gold Delta endpoint.
-
----
-
-## Project Structure
-```
-netflix-data-engineering/
-├── notebooks/        
-│   ├ 01_bronze.ipynb
-│   ├ 02_silver.ipynb
-│   └ 03_gold.ipynb
-├── analytics-dashboard/          
-│   └ netflix-analytics-dashboard-power-bi.pbix
-|   └ netflix-analytics-dashboard-power-bi.pdf
-├── dataset/             
-│   └ dimension_table
-│               └ netflix_cast.csv
-│               └ netflix_category.csv
-│               └ netflix_countries.csv
-│               └ netflix_directors.csv
-│   └ fact_table
-│               └ netflix_titles.csv
-├── README.md
-└── LICENSE
-```
 
 ---
 
